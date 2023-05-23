@@ -84,6 +84,9 @@ target_link_libraries(${PROJECT_NAME} Eigen3::Eigen)
 target_include_directories(
   ${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
                          $<INSTALL_INTERFACE:include>)
+get_relative_rpath(lib ${PROJECT_NAME}_INSTALL_RPATH)
+set_target_properties(${PROJECT_NAME} PROPERTIES INSTALL_RPATH "${${PROJECT_NAME}_INSTALL_RPATH}")
+
 install(
   TARGETS ${PROJECT_NAME}
   EXPORT ${TARGETS_EXPORT_NAME}
@@ -106,6 +109,8 @@ if(BUILD_PYTHON_INTERFACE)
   target_link_boost_python(${PYWRAP})
   set_target_properties(${PYWRAP} PROPERTIES INSTALL_RPATH
                                              "${CMAKE_INSTALL_PREFIX}/lib")
+  get_relative_rpath(${${PYWRAP}_INSTALL_DIR} ${PYWRAP}_INSTALL_RPATH)
+  set_target_properties(${PYWRAP} PROPERTIES INSTALL_RPATH "${${PYWRAP}_INSTALL_RPATH}")
   install(TARGETS ${PYWRAP} DESTINATION ${${PYWRAP}_INSTALL_DIR})
 
   # --- Allow to do: make python --- #
@@ -126,6 +131,8 @@ macro(create_demo source)
     PUBLIC CONFIG_SOLO12_YAML="${PROJECT_SOURCE_DIR}/demos/config_solo12.yaml"
     PUBLIC
       CONFIG_TESTBENCH_YAML="${PROJECT_SOURCE_DIR}/demos/config_testbench.yaml")
+  get_relative_rpath(bin ${demo_name}_INSTALL_RPATH)
+  set_target_properties(${demo_name} PROPERTIES INSTALL_RPATH "${${demo_name}_INSTALL_RPATH}")
   install(TARGETS ${demo_name} DESTINATION bin)
 
 endmacro(create_demo source)
