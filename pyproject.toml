@@ -1,0 +1,17 @@
+[build-system]
+build-backend = "cmeel.build"
+requires = ["master-board[build]", "cmeel-yaml-cpp", "eigenpy[build]", "cmeel[build]"]
+
+[project]
+dependencies = ["master-board", "cmeel-yaml-cpp", "eigenpy"]
+description = "ODRI Low level control interface"
+license = "BSD-3-Clause"
+name = "odri-control-interface"
+requires-python = ">= 3.8"
+version = "1.0"
+
+[project.urls]
+homepage = "https://github.com/open-dynamic-robot-initiative/odri_control_interface"
+
+[tool.tomlsort]
+all = true
