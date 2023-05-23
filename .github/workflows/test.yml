@@ -58,7 +58,7 @@ jobs:
       - name: test module
         if: matrix.os == 'ubuntu-latest'
         run: >
-          python -c "import odri_control_interface;
+          python -c "import libodri_control_interface_pywrap;
           assert libodri_control_interface_pywrap.CalibrationMethod.negative == 2"
         env:
           PYTHONWARNINGS: error
