@@ -21,14 +21,6 @@ set(PROJECT_URL
     https://github.com/open-dynamic-robot-initiative/odri_control_interface)
 set(PROJECT_USE_CMAKE_EXPORT TRUE)
 
-# Check if the submodule cmake have been initialized
-if(NOT EXISTS "${CMAKE_SOURCE_DIR}/cmake/base.cmake")
-  message(
-    FATAL_ERROR
-      "\nPlease run the following command first:\ngit submodule update --init\n"
-  )
-endif()
-
 # --- OPTIONS ----------------------------------------
 option(BUILD_PYTHON_INTERFACE "Build the python binding" ON)
 option(PYTHON_STANDARD_LAYOUT "Enable standard Python package layout" ON)
