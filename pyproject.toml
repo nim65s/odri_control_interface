@@ -13,7 +13,7 @@ version = "1.0"
 [project.urls]
 homepage = "https://github.com/open-dynamic-robot-initiative/odri_control_interface"
 
-[tool-cmeel]
+[tool.cmeel]
 build-number = 5
 
 [tool.tomlsort]
