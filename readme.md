@@ -1,6 +1,11 @@
 odri_control_interface
 ----------------------
 
+[![Test](https://github.com/open-dynamic-robot-initiative/odri_control_interface/actions/workflows/test.yml/badge.svg)](https://github.com/open-dynamic-robot-initiative/odri_control_interface/actions/workflows/test.yml)
+[![Release](https://github.com/open-dynamic-robot-initiative/odri_control_interface/actions/workflows/release.yml/badge.svg)](https://github.com/open-dynamic-robot-initiative/odri_control_interface/actions/workflows/release.yml)
+[![PyPI version](https://badge.fury.io/py/odri-control-interface.svg)](https://pypi.org/project/odri-control-interface)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/open-dynamic-robot-initiative/odri_control_interface/main.svg)](https://results.pre-commit.ci/latest/github/open-dynamic-robot-initiative/odri_control_interface/main)
+
 ### What it is
 
 Common interface for controlling robots build with the odri master board.
@@ -17,7 +22,7 @@ pip install treep  # This installs treep
 cd ~/devel
 git clone git@github.com:machines-in-motion/treep_machines_in_motion.git
 treep --clone master-board
-treep --clone odri_control_interface 
+treep --clone odri_control_interface
 ```
 
 #### Build the package
